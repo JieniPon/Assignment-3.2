@@ -1,0 +1,29 @@
+---
+title: "Assignment 3.2.2"
+author: "Jenny Jin"
+date: "2024-01-28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+```{r cars}
+make_art <- function(seed) {
+    library(deldir)
+    set.seed(seed)
+    x <- runif(50)
+    y <- runif(50)
+    
+    tesselation <- deldir(x, y)
+    tiles <- tile.list(tesselation)
+    
+    plot(tiles, pch = 19,
+         fillcol = hcl.colors(50, "Red-Blue"))
+}
+make_art(44)
+
+```
+
